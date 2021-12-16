@@ -67,3 +67,8 @@ export default function Home() {
     </div>
   )
 }
+export const getServerSideProps = async (ctx) => {
+  console.log("setting cache control");
+  ctx.res.setHeader("Cache-Control", "maxage=1");
+  return { props: {} };
+}
